@@ -1,0 +1,356 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-moss: #5E5D4A;
+  --color-moss-dark: #4A493B;
+  --color-laser: #C41E1E;
+  --color-laser-light: #E63C3C;
+  --color-cream: #F2F0E9;
+  --color-cream-dark: #E8E5DC;
+  --color-charcoal: #1A1A1A;
+  --color-charcoal-light: #2A2A2A;
+  --color-gold: #C9A84C;
+  --color-gold-light: #D4B95E;
+  --font-heading: var(--font-heading);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Base body */
+body {
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-heading), system-ui, sans-serif;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-moss);
+  border-radius: 999px;
+}
+
+/* Noise overlay */
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Diagonal grid overlay */
+.grid-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(0,0,0,0.15) 40px,
+    rgba(0,0,0,0.15) 41px
+  ),
+  repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(0,0,0,0.15) 40px,
+    rgba(0,0,0,0.15) 41px
+  );
+}
+
+/* Laser glow animations — STRONG effect */
+@keyframes laserPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 20px rgba(196, 30, 30, 0.6),
+      0 0 40px rgba(196, 30, 30, 0.4),
+      0 0 80px rgba(196, 30, 30, 0.2),
+      0 0 120px rgba(196, 30, 30, 0.1);
+  }
+  50% {
+    text-shadow:
+      0 0 30px rgba(196, 30, 30, 0.8),
+      0 0 60px rgba(196, 30, 30, 0.5),
+      0 0 100px rgba(196, 30, 30, 0.3),
+      0 0 160px rgba(196, 30, 30, 0.15);
+  }
+}
+
+/* Laser word — persistent glow + pulse */
+.hero-laser-word {
+  animation: laserPulse 3s ease-in-out infinite;
+  text-shadow:
+    0 0 20px rgba(196, 30, 30, 0.5),
+    0 0 40px rgba(196, 30, 30, 0.3),
+    0 0 80px rgba(196, 30, 30, 0.15);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Magnetic button with laser sweep */
+.btn-magnetic {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(196, 30, 30, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.03);
+}
+.btn-magnetic:hover {
+  transform: scale(1.03);
+}
+.btn-magnetic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-laser-light);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 0;
+  border-radius: inherit;
+}
+.btn-magnetic:hover::before {
+  transform: translateY(0);
+}
+
+/* Laser sweep line */
+.btn-magnetic::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 100, 100, 0.4) 20%,
+    #ff3333 45%,
+    #ffffff 50%,
+    #ff3333 55%,
+    rgba(255, 100, 100, 0.4) 80%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 8px 2px rgba(255, 50, 50, 0.6),
+    0 0 20px 4px rgba(255, 30, 30, 0.35),
+    0 0 40px 8px rgba(196, 30, 30, 0.15);
+  z-index: 1;
+  pointer-events: none;
+  animation: laserBeam 3.5s ease-in-out infinite;
+}
+
+.btn-magnetic span {
+  position: relative;
+  z-index: 2;
+}
+.btn-magnetic:hover {
+  box-shadow: 0 0 30px rgba(196, 30, 30, 0.4), 0 0 60px rgba(196, 30, 30, 0.15);
+}
+
+@keyframes laserBeam {
+  0% {
+    left: -5%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  45% {
+    left: 105%;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    left: 105%;
+    opacity: 0;
+  }
+}
+
+/* Section transitions */
+section {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ── Laser beam track (the descending red laser line) ── */
+.laser-beam-track {
+  background: linear-gradient(
+    180deg,
+    var(--color-laser) 0%,
+    var(--color-laser) 70%,
+    rgba(230, 60, 60, 0.9) 85%,
+    rgba(255, 80, 80, 0.6) 93%,
+    rgba(255, 120, 120, 0.2) 97%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 4px rgba(196, 30, 30, 0.7),
+    0 0 10px rgba(196, 30, 30, 0.45),
+    0 0 24px rgba(196, 30, 30, 0.2),
+    0 0 48px rgba(196, 30, 30, 0.08);
+  filter: brightness(1.15);
+}
+
+/* The core dot when active — solid red with intense glow */
+.laser-dot-active {
+  box-shadow:
+    0 0 6px rgba(196, 30, 30, 0.9),
+    0 0 14px rgba(196, 30, 30, 0.6),
+    0 0 28px rgba(196, 30, 30, 0.3),
+    0 0 48px rgba(196, 30, 30, 0.12);
+  animation: laserDotPulse 2s ease-in-out infinite;
+}
+
+/* Outer glow ring around the dot when active */
+.laser-dot-glow-ring {
+  background: radial-gradient(
+    circle,
+    rgba(196, 30, 30, 0.25) 0%,
+    rgba(196, 30, 30, 0.08) 50%,
+    transparent 70%
+  );
+  animation: laserRingPulse 2s ease-in-out infinite;
+}
+
+@keyframes laserDotPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 6px rgba(196, 30, 30, 0.9),
+      0 0 14px rgba(196, 30, 30, 0.6),
+      0 0 28px rgba(196, 30, 30, 0.3),
+      0 0 48px rgba(196, 30, 30, 0.12);
+  }
+  50% {
+    box-shadow:
+      0 0 10px rgba(255, 50, 50, 1),
+      0 0 22px rgba(196, 30, 30, 0.75),
+      0 0 44px rgba(196, 30, 30, 0.4),
+      0 0 72px rgba(196, 30, 30, 0.18);
+  }
+}
+
+@keyframes laserRingPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+/* Responsive container helper */
+.container-narrow {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 390px) {
+  .container-narrow {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .container-narrow {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-narrow {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-narrow {
+    padding: 0 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-narrow {
+    padding: 0 4rem;
+  }
+}
+
+/* ── Shimmer text effect ── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-laser) 0%,
+    #E63C3C 25%,
+    #D4380D 50%,
+    #E63C3C 75%,
+    var(--color-laser) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
