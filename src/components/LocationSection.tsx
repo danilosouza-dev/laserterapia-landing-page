@@ -57,7 +57,7 @@ export default function LocationSection() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white mb-1">
-                  Logos Cursos e Pós-Graduação
+                  HMZ Centro de Treinamento
                 </h3>
                 <p className="text-white/50 text-sm leading-relaxed">
                   Rua Barão do Amazonas, 1253, Jardim Botânico
