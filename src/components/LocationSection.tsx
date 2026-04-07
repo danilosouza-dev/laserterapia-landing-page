@@ -37,7 +37,7 @@ export default function LocationSection() {
           {/* Map */}
           <div className="relative h-64 md:h-80 bg-gray-100">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.5!2d-51.1758!3d-30.0346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sPorto+Alegre+-+RS!5e0!3m2!1spt-BR!2sbr!4v1"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.2!2d-51.2048!3d-30.0394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951979a6d5d3e8e7%3A0x0!2sRua+Bar%C3%A3o+do+Amazonas%2C+1253+-+Jardim+Bot%C3%A2nico%2C+Porto+Alegre+-+RS!5e0!3m2!1spt-BR!2sbr!4v1"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -60,9 +60,9 @@ export default function LocationSection() {
                   Logos Cursos e Pós-Graduação
                 </h3>
                 <p className="text-white/50 text-sm leading-relaxed">
-                  Rua Presidente Bernardes, 1650
+                  Rua Barão do Amazonas, 1253, Jardim Botânico
                   <br />
-                  Porto Alegre — RS
+                  3º andar — Porto Alegre — RS
                   <br />
                   Contato: (45) 99107-9680
                 </p>
