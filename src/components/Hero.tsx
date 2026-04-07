@@ -43,7 +43,7 @@ export default function Hero() {
         <img
           src="/bg-hero.jpeg"
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-[60%_20%] md:object-[70%_center] xl:object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[60%_20%] md:object-[55%_20%] xl:object-center"
           draggable={false}
         />
         {/* Dark overlays */}
