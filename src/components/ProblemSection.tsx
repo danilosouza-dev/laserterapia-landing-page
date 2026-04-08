@@ -37,7 +37,7 @@ const masteryItems = [
     tags: ["DTM", "Herpes", "Mucosite", "Parestesia"],
     description:
       "Analise casos clínicos reais com antes e depois, protocolos detalhados e resultados.",
-    image: "/images/mastery-casos.jpg",
+    image: "/casos/caso 1/caso_1.png",
     gradient: "from-black/60 via-black/30 to-transparent",
   },
   {
