@@ -38,7 +38,6 @@ const masteryItems = [
     description:
       "Analise casos clínicos reais com antes e depois, protocolos detalhados e resultados.",
     image: "/casos/caso 1/caso_1.png",
-    objectPosition: "center 10%",
     gradient: "from-black/60 via-black/30 to-transparent",
   },
   {
@@ -333,7 +332,6 @@ export default function ProblemSection() {
                               ? "scale-105 brightness-100"
                               : "scale-100 brightness-75 saturate-50"
                           }`}
-                          style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
                         />
                         {/* Gradient overlay */}
                         <div
