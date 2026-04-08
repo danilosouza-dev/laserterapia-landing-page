@@ -38,7 +38,7 @@ const masteryItems = [
     description:
       "Analise casos clínicos reais com antes e depois, protocolos detalhados e resultados.",
     image: "/casos/caso 1/caso_1.png",
-    imageTop: "-6rem",
+    imageTop: -6,
     gradient: "from-black/60 via-black/30 to-transparent",
   },
   {
