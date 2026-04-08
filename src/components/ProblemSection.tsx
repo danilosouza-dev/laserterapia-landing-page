@@ -53,7 +53,7 @@ const masteryItems = [
     tags: ["20h", "Certificado", "Currículo"],
     description:
       "Receba certificado de conclusão reconhecido com carga horária de 20 horas.",
-    image: "/images/mastery-certificacao.jpg",
+    image: "/images/mulher-certificado.jpeg",
     gradient: "from-black/60 via-black/30 to-transparent",
   },
 ];
