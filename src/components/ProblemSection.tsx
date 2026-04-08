@@ -21,7 +21,7 @@ const masteryItems = [
     tags: ["Anti-inflamatório", "Bioestimulação", "Analgesia", "Reparo"],
     description:
       "Protocolos validados cientificamente para as situações mais comuns da clínica odontológica.",
-    image: "/images/mastery-protocolos.jpg",
+    image: "/images/protocolos.jpeg",
     gradient: "from-black/60 via-black/30 to-transparent",
   },
   {
