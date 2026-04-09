@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { Check, Play, MessageCircle } from "lucide-react";
 import gsap from "gsap";
 
-export default function ThankYouPage() {
+export default function ThankYouPage({ showRecordings = false }: { showRecordings?: boolean }) {
   const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -155,12 +155,12 @@ export default function ThankYouPage() {
         </div>
       </section>
 
+      {showRecordings && (
+        <>
       {/* ═══ SEPARATOR ═══ */}
       <div className="container-narrow">
         <div className="h-px bg-white/[0.06]" />
       </div>
-
-      {/* ═══ RECORDINGS SECTION ═══ */}
       <section className="ty-recordings relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(196,30,30,0.05)_0%,transparent_65%)]" />
@@ -243,6 +243,8 @@ export default function ThankYouPage() {
           </div>
         </div>
       </section>
+        </>
+      )}
 
       {/* ═══ SEPARATOR ═══ */}
       <div className="container-narrow">
