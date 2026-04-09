@@ -21,7 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 const features = [
   { icon: Clock, text: "20h de conteúdo intensivo" },
   { icon: BookOpen, text: "Protocolos clínicos validados" },
-  { icon: FlaskConical, text: "Prática supervisionada" },
+  { icon: FlaskConical, text: "Hands on" },
   { icon: Award, text: "Certificado de conclusão (20h)" },
   { icon: Users, text: "Turma reduzida e exclusiva" },
   { icon: Headphones, text: "Suporte pós-curso" },
@@ -185,7 +185,7 @@ export default function InvestmentSection() {
                   </div>
                   <div className="flex-1 md:border-r border-b md:border-b-0 border-[var(--color-cream-dark)] md:px-4 pb-3 md:pb-2 md:py-2">
                     <p className="text-[var(--color-charcoal)]/60 text-xs leading-snug">
-                      Prática supervisionada. Sem precisar de experiência
+                      Hands on. Sem precisar de experiência
                       prévia.
                     </p>
                   </div>

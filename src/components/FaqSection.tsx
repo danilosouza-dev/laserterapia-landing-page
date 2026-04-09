@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: "Preciso ter equipamento de laser para participar?",
-    a: "Não! Todos os equipamentos profissionais serão fornecidos durante a imersão para a prática supervisionada. Ao final, você saberá exatamente qual equipamento adquirir.",
+    a: "Não! Todos os equipamentos profissionais serão fornecidos durante a imersão para o hands on. Ao final, você saberá exatamente qual equipamento adquirir.",
   },
   {
     q: "Qual é a política de cancelamento?",
@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "O que está incluso no investimento?",
-    a: "Material didático completo, prática supervisionada com equipamentos profissionais, coffee breaks, certificado de conclusão e acesso ao grupo VIP de alunos.",
+    a: "Material didático completo, hands on com equipamentos profissionais, coffee breaks, certificado de conclusão e acesso ao grupo VIP de alunos.",
   },
   {
     q: "Quantas vagas estão disponíveis?",

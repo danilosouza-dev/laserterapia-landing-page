@@ -42,7 +42,7 @@ const masteryItems = [
     gradient: "from-black/60 via-black/30 to-transparent",
   },
   {
-    title: "Prática Supervisionada",
+    title: "Hands On",
     tags: ["Hands-on", "Equipamentos", "Supervisão", "Feedback"],
     description:
       "Pratique com equipamentos profissionais sob supervisão direta dos instrutores.",
