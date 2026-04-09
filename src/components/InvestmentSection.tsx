@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import CheckoutModal from "./CheckoutModal";
 import {
   ArrowRight,
   Check,
@@ -36,6 +37,7 @@ const bonuses = [
 
 export default function InvestmentSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -220,14 +222,12 @@ export default function InvestmentSection() {
                 </div>
 
                 {/* Row 4: CTA button */}
-                <a
-                  href="https://wa.me/5583999999999?text=Quero%20garantir%20minha%20vaga%20no%20curso%20de%20Laserterapia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-magnetic bg-[var(--color-laser)] text-white font-semibold text-sm tracking-wider px-8 py-4 rounded-sm flex items-center justify-center gap-3 uppercase w-full"
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="btn-magnetic bg-[var(--color-laser)] text-white font-semibold text-sm tracking-wider px-8 py-4 rounded-sm flex items-center justify-center gap-3 uppercase w-full cursor-pointer"
                 >
                   <span>GARANTIR MINHA VAGA</span>
-                </a>
+                </button>
 
                 {/* Row 5: Progress bar */}
                 <div className="flex items-center justify-between mt-3 w-full">
@@ -364,6 +364,11 @@ export default function InvestmentSection() {
           </div>
         </div>
       </div>
+      {/* Checkout Modal */}
+      <CheckoutModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 }
