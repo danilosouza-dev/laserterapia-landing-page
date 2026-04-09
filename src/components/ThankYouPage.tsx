@@ -212,7 +212,7 @@ export default function ThankYouPage() {
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden aspect-video bg-[#1A1A1A] border border-white/[0.06]">
                 <img
-                  src="/images/mastery-pratica.jpg"
+                  src="/images/mastery-pratica.jpeg"
                   alt="Gravações do evento"
                   className="w-full h-full object-cover opacity-80"
                 />

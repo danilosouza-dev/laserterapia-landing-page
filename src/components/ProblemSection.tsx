@@ -46,7 +46,7 @@ const masteryItems = [
     tags: ["Hands-on", "Equipamentos", "Supervisão", "Feedback"],
     description:
       "Pratique com equipamentos profissionais sob supervisão direta dos instrutores.",
-    image: "/images/mastery-pratica.jpg",
+    image: "/images/mastery-pratica.jpeg",
     gradient: "from-black/60 via-black/30 to-transparent",
   },
   {
