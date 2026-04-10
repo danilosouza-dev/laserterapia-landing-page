@@ -5,11 +5,14 @@ import { X, ChevronDown } from "lucide-react";
 import { useLenis } from "./SmoothScroll";
 
 // ─── CONFIG ──────────────────────────────────────────────
-// TODO: Replace with your actual checkout URL
-const CHECKOUT_URL = "";
+// Zouti checkout URL — configure via .env.local (NEXT_PUBLIC_CHECKOUT_URL)
+const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL || "";
 
-// TODO: Replace with your email marketing webhook/API endpoint
-const EMAIL_MARKETING_WEBHOOK = "";
+// Brevo lead capture API route
+const CAPTURE_LEAD_API = "/api/capture-lead";
+
+// Cidade do evento (TODO: tornar dinâmico por subdomínio)
+const CIDADE = "Porto Alegre";
 // ─────────────────────────────────────────────────────────
 
 const COUNTRIES = [
@@ -162,27 +165,33 @@ export default function CheckoutModal({ isOpen, onClose }: CheckoutModalProps) {
     e.preventDefault();
     if (!validate()) return;
     setIsSubmitting(true);
+
+    const fullPhone = `${selectedCountry.ddi}${phone.replace(/\D/g, "")}`;
+
     try {
-      if (EMAIL_MARKETING_WEBHOOK) {
-        await fetch(EMAIL_MARKETING_WEBHOOK, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email,
-            phone: `${selectedCountry.ddi}${phone.replace(/\D/g, "")}`,
-            country: selectedCountry.code,
-            source: "landing_page_checkout",
-            tags: ["laserterapia", "checkout_interest"],
-            timestamp: new Date().toISOString(),
-          }),
-        });
-      }
+      // 1. Enviar lead para o Brevo via API Route
+      await fetch(CAPTURE_LEAD_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          phone: fullPhone,
+          cidade: CIDADE,
+        }),
+      });
     } catch {
-      console.warn("Email marketing webhook failed");
+      // Não bloquear o checkout se o Brevo falhar
+      console.warn("Falha ao capturar lead no Brevo");
     }
+
+    // 2. Redirecionar para o checkout Zouti com dados pré-preenchidos
     if (CHECKOUT_URL) {
-      window.open(CHECKOUT_URL, "_blank", "noopener,noreferrer");
+      const checkoutUrl = new URL(CHECKOUT_URL);
+      checkoutUrl.searchParams.set("email", email);
+      checkoutUrl.searchParams.set("phone", fullPhone.replace(/\+/g, ""));
+      window.location.href = checkoutUrl.toString();
     }
+
     setIsSubmitting(false);
     onClose();
   };
