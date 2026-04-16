@@ -13,7 +13,7 @@ const masteryItems = [
     tags: ["660nm", "808nm", "J/cm²", "Potência Óptica"],
     description:
       "Domine os parâmetros que separam o sucesso do fracasso: comprimento de onda, potência e fluência.",
-    image: "/images/mastery-dosimetria.jpg",
+    image: "/images/dosimetria-laserterapia.jpg",
     gradient: "from-black/60 via-black/30 to-transparent",
   },
   {
