@@ -26,7 +26,7 @@ export default function FacaParteSection() {
         {/* CTA Button — same style as Hero */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <a
-            href="https://wa.me/5583999999999?text=Quero%20garantir%20minha%20vaga%20no%20curso%20de%20Laserterapia"
+            href="https://wa.me/5545999667049?text=Quero%20garantir%20minha%20vaga%20no%20curso%20de%20Laserterapia"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-magnetic bg-[var(--color-laser)] text-white font-semibold text-sm tracking-wider px-10 py-4 rounded-sm flex items-center gap-3 uppercase shadow-lg shadow-[var(--color-laser)]/20"

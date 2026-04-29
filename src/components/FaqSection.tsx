@@ -114,7 +114,7 @@ export default function FaqSection() {
               </p>
 
               <a
-                href="https://wa.me/SEUNUMEROAQUI"
+                href="https://wa.me/5545999667049"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold text-sm md:text-base px-7 py-4 rounded-xl transition-all duration-300 hover:shadow-[0_0_16px_rgba(37,211,102,0.2)]"

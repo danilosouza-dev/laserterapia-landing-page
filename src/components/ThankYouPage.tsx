@@ -124,7 +124,7 @@ export default function ThankYouPage({ showRecordings = false }: { showRecording
               {/* CTA Button */}
               <div className="ty-cta">
                 <a
-                  href="https://wa.me/SEUNUMEROAQUI"
+                  href="https://chat.whatsapp.com/Ikn2fllOfx9HKOLe9zenDS"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-base px-8 py-4.5 rounded-lg transition-all duration-300 hover:shadow-[0_0_24px_rgba(37,211,102,0.25)] hover:scale-[1.02]"
@@ -276,7 +276,7 @@ export default function ThankYouPage({ showRecordings = false }: { showRecording
             </h3>
 
             <a
-              href="https://wa.me/SEUNUMEROAQUI"
+              href="https://wa.me/5545999667049"
               target="_blank"
               rel="noopener noreferrer"
               className="group mt-6 inline-flex items-center gap-3 bg-transparent border border-white/20 hover:border-[#25D366]/50 text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition-all duration-300 hover:bg-[#25D366]/10"

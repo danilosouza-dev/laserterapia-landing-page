@@ -60,7 +60,7 @@ export default function Navbar() {
           </a>
         ))}
         <a
-          href="https://wa.me/5500000000000?text=Quero%20garantir%20minha%20vaga%20no%20curso%20de%20Laserterapia"
+          href="https://wa.me/5545999667049?text=Quero%20garantir%20minha%20vaga%20no%20curso%20de%20Laserterapia"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-magnetic bg-[var(--color-laser)] text-white text-sm font-semibold px-5 py-2.5 rounded-full"
@@ -93,7 +93,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="https://wa.me/5500000000000?text=Quero%20garantir%20minha%20vaga%20no%20curso%20de%20Laserterapia"
+              href="https://wa.me/5545999667049?text=Quero%20garantir%20minha%20vaga%20no%20curso%20de%20Laserterapia"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-magnetic bg-[var(--color-laser)] text-white text-sm font-bold px-5 py-3 rounded-full text-center"
