@@ -6,7 +6,7 @@ import { useLenis } from "./SmoothScroll";
 
 // ─── CONFIG ──────────────────────────────────────────────
 // Zouti checkout URL — configure via .env.local (NEXT_PUBLIC_CHECKOUT_URL)
-const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL || "";
+const CHECKOUT_URL = process.env.NEXT_PUBLIC_CHECKOUT_URL || "https://pay.zouti.com.br/checkout?poi=prod_offer_y7h3axjpqe2er8ik4dg23s";
 
 // Brevo lead capture API route
 const CAPTURE_LEAD_API = "/api/capture-lead";
