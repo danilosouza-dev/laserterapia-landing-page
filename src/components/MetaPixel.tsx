@@ -1,11 +1,28 @@
 "use client";
 
 import Script from "next/script";
+import { useEffect, useState } from "react";
 
-const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+const META_PIXEL_ID = "1639041757107277";
+
+// Domínios de produção onde o pixel deve rodar
+const PRODUCTION_DOMAINS = [
+  "laserterapiaparadentistas.com.br",
+  "portoalegre.laserterapiaparadentistas.com.br",
+];
 
 export default function MetaPixel() {
-  if (!META_PIXEL_ID) return null;
+  const [isProduction, setIsProduction] = useState(false);
+
+  useEffect(() => {
+    const hostname = window.location.hostname;
+    const isProd = PRODUCTION_DOMAINS.some(
+      (domain) => hostname === domain || hostname === `www.${domain}`
+    );
+    setIsProduction(isProd);
+  }, []);
+
+  if (!isProduction) return null;
 
   return (
     <>
