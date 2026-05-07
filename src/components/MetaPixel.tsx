@@ -1,29 +1,6 @@
-"use client";
-
 import Script from "next/script";
-import { useEffect, useState } from "react";
-
-const META_PIXEL_ID = "1639041757107277";
-
-// Domínios de produção onde o pixel deve rodar
-const PRODUCTION_DOMAINS = [
-  "laserterapiaparadentistas.com.br",
-  "portoalegre.laserterapiaparadentistas.com.br",
-];
 
 export default function MetaPixel() {
-  const [isProduction, setIsProduction] = useState(false);
-
-  useEffect(() => {
-    const hostname = window.location.hostname;
-    const isProd = PRODUCTION_DOMAINS.some(
-      (domain) => hostname === domain || hostname === `www.${domain}`
-    );
-    setIsProduction(isProd);
-  }, []);
-
-  if (!isProduction) return null;
-
   return (
     <>
       <Script id="meta-pixel" strategy="afterInteractive">
@@ -36,7 +13,7 @@ export default function MetaPixel() {
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '${META_PIXEL_ID}');
+          fbq('init', '1639041757107277');
           fbq('track', 'PageView');
         `}
       </Script>
@@ -45,7 +22,7 @@ export default function MetaPixel() {
           height="1"
           width="1"
           style={{ display: "none" }}
-          src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          src="https://www.facebook.com/tr?id=1639041757107277&ev=PageView&noscript=1"
           alt=""
         />
       </noscript>
