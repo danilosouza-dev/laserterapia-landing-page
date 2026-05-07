@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Cormorant_Garamond, JetBrains_Mono } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScroll";
+import MetaPixel from "@/components/MetaPixel";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -53,6 +54,7 @@ export default function RootLayout({
       className={`${jakarta.variable} ${cormorant.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="noise-overlay grid-overlay min-h-full flex flex-col">
+        <MetaPixel />
         <SmoothScroll>
           {children}
         </SmoothScroll>
